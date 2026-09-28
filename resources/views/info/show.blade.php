@@ -37,9 +37,22 @@
                 @endif
 
                 {{-- Article Content --}}
-                <article class="prose prose-lg prose-green max-w-none text-gray-700 leading-relaxed">
-                    {!! nl2br(e($post->content)) !!}
+                <article class="article-content max-w-none text-gray-700 leading-relaxed text-lg">
+                    {!! $post->content !!}
                 </article>
+
+                <style>
+                    .article-content p { margin-bottom: 1.5rem; line-height: 1.8; }
+                    .article-content h1, .article-content h2, .article-content h3 { color: var(--ink-900); font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; }
+                    .article-content h2 { font-size: 1.75rem; }
+                    .article-content h3 { font-size: 1.5rem; }
+                    .article-content ul { list-style-type: disc; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+                    .article-content ol { list-style-type: decimal; padding-left: 1.5rem; margin-bottom: 1.5rem; }
+                    .article-content li { margin-bottom: 0.5rem; }
+                    .article-content a { color: var(--green-600); text-decoration: underline; }
+                    .article-content blockquote { border-left: 4px solid var(--green-600); padding-left: 1rem; color: var(--ink-600); font-style: italic; margin-bottom: 1.5rem; }
+                    .article-content img { max-width: 100%; height: auto; border-radius: 0.5rem; margin: 1.5rem 0; }
+                </style>
 
                 {{-- Share & Meta --}}
                 <div class="mt-12 pt-8 border-t border-gray-100 flex flex-wrap items-center gap-4">

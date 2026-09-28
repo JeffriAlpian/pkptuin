@@ -112,6 +112,7 @@ Route::middleware(['auth', 'verified', 'role:admin'])->prefix('admin')->name('ad
     Route::delete('/contacts/{contact}', [AdminContactController::class, 'destroy'])->name('contacts.destroy');
 
     // Kelola Berita & Event
+    Route::post('/posts/generate-ai', [\App\Http\Controllers\Admin\AiController::class, 'generateNews'])->name('posts.generate-ai');
     Route::resource('posts', AdminPostController::class)->except(['show']);
 
     // Kelola Galeri
